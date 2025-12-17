@@ -212,7 +212,6 @@ export const translations = {
     good: 'Good',
     damageOrMissing: 'Damage or Missing',
     describeDamageDetails: 'Describe what damage or items are missing...',
-    all_items: 'All Items',
 
     // Notifications
     notifications: 'Notifications',
@@ -246,8 +245,6 @@ export const translations = {
     updating: 'Updating...',
     updateUser: 'Update User',
 
-    // Additional missing keys
-    department: 'Department',
   },
   ar: {
     // Header
@@ -266,7 +263,9 @@ export const translations = {
     logout: 'تسجيل الخروج',
 
     // Notifications
+    notificationsBell: 'الإشعارات',
     notifications: 'الإشعارات',
+    markAllAsRead: 'وضع علامة مقروء على الكل',
     markAllRead: 'وضع علامة مقروء على الكل',
     noNotifications: 'لا توجد إشعارات',
 
@@ -594,8 +593,6 @@ export const translations = {
     updating: 'جار التحديث...',
     updateUser: 'تحديث المستخدم',
 
-    // Additional missing keys
-    department: 'القسم',
   }
 };
 
