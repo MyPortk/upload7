@@ -1,0 +1,803 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PIXY DESIGN SYSTEM - LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+  
+  /* Pixy Colors */
+  --background: 45 7% 92%;
+  --foreground: 228 3% 21%;
+  --border: 45 5% 85%;
+  --card: 45 10% 95%;
+  --card-foreground: 228 3% 21%;
+  --card-border: 45 5% 88%;
+  --sidebar: 45 7% 90%;
+  --sidebar-foreground: 228 3% 21%;
+  --sidebar-border: 45 5% 85%;
+  --sidebar-primary: 152 56% 51%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 45 7% 85%;
+  --sidebar-accent-foreground: 228 3% 21%;
+  --sidebar-ring: 152 56% 51%;
+  --popover: 45 10% 94%;
+  --popover-foreground: 228 3% 21%;
+  --popover-border: 45 5% 88%;
+  
+  /* Primary: Pixy Green #37CC8D */
+  --primary: 152 56% 51%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary: Pixy Orange #FEAF62 */
+  --secondary: 32 99% 69%;
+  --secondary-foreground: 228 3% 21%;
+  
+  --muted: 45 5% 80%;
+  --muted-foreground: 0 0% 50%;
+  --accent: 152 56% 51%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 45 5% 75%;
+  --ring: 152 56% 51%;
+  
+  --chart-1: 152 56% 51%;
+  --chart-2: 32 99% 69%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 49%;
+  --chart-5: 27 87% 67%;
+  
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-display: "Anton", sans-serif;
+  
+  --radius: .5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 2px 4px -1px hsl(0 0% 0% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 4px 6px -1px hsl(0 0% 0% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 8px 10px -1px hsl(0 0% 0% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+  
+  --background: 228 5% 12%;
+  --foreground: 45 7% 92%;
+  --border: 228 5% 20%;
+  --card: 228 5% 15%;
+  --card-foreground: 45 7% 92%;
+  --card-border: 228 5% 18%;
+  --sidebar: 228 5% 14%;
+  --sidebar-foreground: 45 7% 92%;
+  --sidebar-border: 228 5% 18%;
+  --sidebar-primary: 152 56% 51%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 228 5% 20%;
+  --sidebar-accent-foreground: 45 7% 92%;
+  --sidebar-ring: 152 56% 51%;
+  --popover: 228 5% 18%;
+  --popover-foreground: 45 7% 92%;
+  --popover-border: 228 5% 22%;
+  --primary: 152 56% 51%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 32 99% 69%;
+  --secondary-foreground: 228 3% 21%;
+  --muted: 228 5% 22%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 152 56% 51%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 228 5% 30%;
+  --ring: 152 56% 51%;
+  
+  --chart-1: 152 56% 60%;
+  --chart-2: 32 99% 75%;
+  --chart-3: 197 37% 55%;
+  --chart-4: 43 74% 65%;
+  --chart-5: 27 87% 70%;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: "Outfit", sans-serif;
+    @apply antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Anton", sans-serif;
+    @apply text-foreground uppercase tracking-tight;
+    font-weight: 400;
+  }
+}
+
+/* Pixy Typography Classes */
+.mil-display1 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(3rem, 8.5vw, 10rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.mil-head1 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.mil-head2 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.mil-head3 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.mil-head4 {
+  font-family: "Anton", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.mil-stylized {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mil-text-md {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.mil-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Pixy Accent Colors */
+.mil-a1 {
+  color: hsl(32 99% 69%);
+}
+
+.mil-a2 {
+  color: hsl(152 56% 51%);
+}
+
+.mil-m1 {
+  color: hsl(var(--foreground));
+}
+
+.mil-m2 {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Pixy Menu Button */
+.mil-menu-btn {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mil-menu-btn span {
+  width: 24px;
+  height: 2px;
+  background-color: hsl(var(--foreground));
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mil-menu-btn span::before,
+.mil-menu-btn span::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: hsl(var(--foreground));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mil-menu-btn span::before {
+  top: -8px;
+}
+
+.mil-menu-btn span::after {
+  top: 8px;
+}
+
+.mil-menu-btn.active span {
+  background-color: transparent;
+}
+
+.mil-menu-btn.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mil-menu-btn.active span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Pixy Button Styles */
+.mil-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.mil-btn.mil-a2 {
+  background-color: hsl(152 56% 51%);
+  color: white;
+}
+
+.mil-btn.mil-a2:hover {
+  background-color: hsl(152 56% 45%);
+  transform: translateY(-2px);
+}
+
+.mil-btn.mil-a1 {
+  background-color: hsl(32 99% 69%);
+  color: hsl(228 3% 21%);
+}
+
+.mil-btn.mil-a1:hover {
+  background-color: hsl(32 99% 63%);
+  transform: translateY(-2px);
+}
+
+/* Pixy Menu Overlay */
+.mil-menu-frame {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background-color: hsl(var(--card));
+  z-index: 9998;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.mil-menu-frame.active {
+  transform: translateX(0);
+}
+
+.mil-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9997;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mil-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Pixy Main Menu */
+.mil-main-menu {
+  list-style: none;
+  padding: 100px 40px 40px;
+  margin: 0;
+}
+
+.mil-main-menu > li {
+  margin-bottom: 1.5rem;
+}
+
+.mil-main-menu > li > a {
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.mil-main-menu > li > a:hover {
+  color: hsl(152 56% 51%);
+}
+
+.mil-main-menu > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(152 56% 51%);
+  transition: width 0.3s ease;
+}
+
+.mil-main-menu > li > a:hover::after {
+  width: 100%;
+}
+
+.mil-main-menu > li.active > a {
+  color: hsl(152 56% 51%);
+}
+
+.mil-main-menu > li.active > a::after {
+  width: 100%;
+}
+
+/* Pixy Top Panel */
+.mil-top-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  pointer-events: none;
+}
+
+.mil-top-panel > * {
+  pointer-events: auto;
+}
+
+.mil-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Anton", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mil-logo:hover {
+  color: hsl(152 56% 51%);
+}
+
+.mil-logo i {
+  font-size: 1.5rem;
+}
+
+.mil-tp-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: hsl(var(--card));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--border));
+}
+
+.mil-tp-btn:hover {
+  background-color: hsl(152 56% 51%);
+  color: white;
+  border-color: hsl(152 56% 51%);
+}
+
+/* Pixy Cards Grid */
+.mil-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mil-portfolio-item {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mil-portfolio-item:hover {
+  transform: translateY(-8px);
+}
+
+.mil-portfolio-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mil-portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.mil-portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+/* Pixy Scroll Progress */
+.mil-progress-track {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 100px;
+  background-color: hsl(var(--border));
+  border-radius: 3px;
+  z-index: 9990;
+}
+
+.mil-progress {
+  width: 100%;
+  background-color: hsl(152 56% 51%);
+  border-radius: 3px;
+  transition: height 0.1s ease;
+}
+
+/* Pixy Shapes */
+.mil-shapes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mil-shapes img {
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+}
+
+.mil-s-1 {
+  top: 10%;
+  right: 20%;
+}
+
+.mil-s-2 {
+  top: 40%;
+  right: 5%;
+}
+
+.mil-s-3 {
+  bottom: 20%;
+  right: 30%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes levitate-lg {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(30px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes levitate-sm {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(10px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-levitate-lg {
+  animation: levitate-lg 4s ease-in-out infinite;
+}
+
+.animate-levitate-sm {
+  animation: levitate-sm 3s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.mil-rubber {
+  white-space: pre-wrap;
+}
+
+.mil-letter-span {
+  display: inline-block;
+  cursor: default;
+  transition: transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.mil-letter-span:hover {
+  transform: scaleY(1.3) scaleX(0.8);
+  color: hsl(152 56% 51%);
+}
+
+.mil-word-span {
+  display: inline-block;
+}
+
+.mil-hero-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.mil-hero-text .mil-text-pad {
+  background-color: white;
+  width: 40vw;
+  height: 40vw;
+  position: absolute;
+  top: calc(50% - 20vw);
+  left: calc(50% - 20vw);
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.dark .mil-hero-text .mil-text-pad {
+  background-color: hsl(152 56% 51%);
+  opacity: 0.1;
+}
+
+.mil-scroll-indicator {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.mil-scroll-indicator .mil-scroll-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: hsl(152 56% 51%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.mil-scroll-indicator:hover .mil-scroll-inner {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.mil-scroll-indicator .mil-scroll-text {
+  position: absolute;
+  inset: 0;
+  animation: spin-slow 15s linear infinite;
+}
+
+/* Pixy Social Icons */
+.mil-social {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mil-social li a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: hsl(var(--muted));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--foreground));
+  transition: all 0.3s ease;
+}
+
+.mil-social li a:hover {
+  background-color: hsl(152 56% 51%);
+  color: white;
+}
+
+/* Utility Classes */
+.mil-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mil-mb15 { margin-bottom: 0.9375rem; }
+.mil-mb30 { margin-bottom: 1.875rem; }
+.mil-mb60 { margin-bottom: 3.75rem; }
+.mil-mb90 { margin-bottom: 5.625rem; }
+
+.mil-p-160-100 {
+  padding-top: 10rem;
+  padding-bottom: 6.25rem;
+}
+
+.mil-p-0-100 {
+  padding-bottom: 6.25rem;
+}
+
+.mil-p-0-160 {
+  padding-bottom: 10rem;
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
